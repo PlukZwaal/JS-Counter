@@ -19,29 +19,23 @@
 
 <script>
     var amountValue = 0;
-
     document.getElementById('increaseButton')
     .addEventListener('click', function(e){
-        amountValue += 1;
-        document.getElementById('amountValue').innerHTML = amountValue;
-        CheckColor();
+        amountValue++;
+        setValue();
     });
-
     document.getElementById('decreaseButton')
     .addEventListener('click', function(e){
-        amountValue -= 1;
-        document.getElementById('amountValue').innerHTML = amountValue;
-        CheckColor();
+        amountValue--;
+        setValue();
     });
-
     document.getElementById('resetButton')
     .addEventListener('click', function(e){
         amountValue = 0;
-        document.getElementById('amountValue').innerHTML = amountValue;
-        CheckColor();
+        setValue();
     });
-
-    function CheckColor(){
+    function setValue(){
+        document.getElementById('amountValue').innerHTML = amountValue;
         if(amountValue > 0){
             document.getElementById('amountValue').style.color = "green";
         }else if(amountValue < 0){
@@ -50,5 +44,4 @@
             document.getElementById('amountValue').style.color = "black";
         }
     }
-
 </script>
