@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="amountValue">0</h1>
+    <div class="buttons">
+        <button id="increaseButton">Increase</button>
+        <button id="resetButton">Reset</button>
+        <button id="decreaseButton">Decrease</button>
+    </div>
+</body>
+</html>
+
+<script>
+    var amountValue = 0;
+
+    document.getElementById('increaseButton')
+    .addEventListener('click', function(e){
+        amountValue += 1;
+        document.getElementById('amountValue').innerHTML = amountValue;
+        CheckColor();
+    });
+
+    document.getElementById('decreaseButton')
+    .addEventListener('click', function(e){
+        amountValue -= 1;
+        document.getElementById('amountValue').innerHTML = amountValue;
+        CheckColor();
+    });
+
+    document.getElementById('resetButton')
+    .addEventListener('click', function(e){
+        amountValue = 0;
+        document.getElementById('amountValue').innerHTML = amountValue;
+        CheckColor();
+    });
+
+    function CheckColor(){
+        if(amountValue > 0){
+            document.getElementById('amountValue').style.color = "green";
+        }else if(amountValue < 0){
+            document.getElementById('amountValue').style.color = "red";
+        }else{
+            document.getElementById('amountValue').style.color = "black";
+        }
+    }
+
+</script>
